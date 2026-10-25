@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vcascade"
+version = "0.1.0"
+description = "Cost-aware verifier selection for context-free LLM cascades (extends AutoMix)"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "scikit-learn", "matplotlib"]
+
+[project.optional-dependencies]
+# GPU box only (Kaggle / Colab)
+gen = ["vllm", "datasets", "sentence-transformers", "requests", "openai"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
