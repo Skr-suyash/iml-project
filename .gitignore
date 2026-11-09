@@ -5,11 +5,3 @@ __pycache__/
 cache/
 cache_pilot/
 *.zip
-results/
-kaggle_kernel/
-kaggle_output/
-kaggle_dataset/
-cache_robust_work/
-kaggle_output_robust/
-cache_robust/
-kaggle_output_hidden/

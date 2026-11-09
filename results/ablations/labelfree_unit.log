@@ -1,0 +1,34 @@
+labelfree: split 0 126s
+labelfree: split 1 138s
+labelfree: split 2 119s
+labelfree: split 3 127s
+labelfree: split 4 119s
+# Training without gold labels (unit costs)
+
+The router is trained with the LLM's answer as the truth: SLM correct := its answer matches the LLM's. Needs both models run once on the 828 training queries, no gold answers. Evaluated against gold answers. Mean ± std over 5 splits.
+
+| Variant | IBC lift, ratio 5 | IBC lift, ratio 20 | IBC lift, ratio 60 | Area lift, ratio 5 | Area lift, ratio 20 | Area lift, ratio 60 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Ours, gold labels (all 828) | 48.3 ± 4.7 | 63.4 ± 3.8 | 72.0 ± 4.6 | 2.73 ± 0.28 | 3.85 ± 0.26 | 4.47 ± 0.26 |
+| Ours, gold labels (200) | 37.7 ± 2.8 | 50.7 ± 4.9 | 56.5 ± 6.2 | 2.02 ± 0.36 | 3.10 ± 0.62 | 3.72 ± 0.57 |
+| Ours, gold labels (100) | 21.6 ± 7.1 | 34.1 ± 8.0 | 43.5 ± 8.1 | 1.17 ± 0.41 | 2.43 ± 0.65 | 3.23 ± 0.56 |
+| Ours, gold labels (50) | 11.1 ± 7.3 | 20.6 ± 8.7 | 34.6 ± 6.9 | 0.74 ± 0.35 | 1.53 ± 0.61 | 2.57 ± 0.48 |
+| Ours, no gold labels (LLM answer as truth) | 13.6 ± 1.9 | 33.2 ± 2.3 | 40.8 ± 2.2 | 1.10 ± 0.19 | 2.62 ± 0.19 | 3.27 ± 0.22 |
+| Ours, 50 gold labels + LLM answer for the rest (hard labels) | 12.1 ± 1.8 | 31.4 ± 2.6 | 38.9 ± 2.4 | 0.99 ± 0.15 | 2.49 ± 0.20 | 3.14 ± 0.21 |
+| Ours, 20 gold labels + calibrated LLM agreement | 19.8 ± 9.3 | 40.0 ± 9.1 | 46.8 ± 7.4 | 1.35 ± 0.60 | 2.78 ± 0.52 | 3.38 ± 0.49 |
+| Ours, 50 gold labels + calibrated LLM agreement | 35.9 ± 7.0 | 56.6 ± 6.0 | 63.9 ± 5.1 | 2.09 ± 0.23 | 3.48 ± 0.19 | 4.10 ± 0.21 |
+| Ours, 100 gold labels + calibrated LLM agreement | 42.3 ± 3.8 | 59.6 ± 4.2 | 67.0 ± 3.5 | 2.31 ± 0.18 | 3.58 ± 0.30 | 4.18 ± 0.27 |
+| Pre-generation router, no gold labels | 0.9 ± 0.5 | 0.9 ± 0.5 | 0.9 ± 0.5 | 0.08 ± 0.04 | 0.08 ± 0.04 | 0.08 ± 0.04 |
+| AutoMix, no gold labels | 0.0 ± 0.0 | 7.4 ± 0.5 | 18.6 ± 0.9 | 0.00 ± 0.00 | 0.56 ± 0.06 | 1.31 ± 0.09 |
+| AutoMix, gold labels | 0.0 ± 0.0 | 6.1 ± 1.0 | 17.2 ± 1.4 | 0.00 ± 0.00 | 0.44 ± 0.09 | 1.15 ± 0.12 |
+| Fixed V1 (needs no labels) | 17.3 ± 0.9 | 34.0 ± 0.8 | 37.6 ± 0.8 | 1.39 ± 0.05 | 2.79 ± 0.07 | 3.06 ± 0.07 |
+| Fixed V2, best k (needs no labels) | 0.0 ± 0.0 | 23.9 ± 1.5 | 39.4 ± 2.8 | 0.00 ± 0.00 | 1.96 ± 0.09 | 3.05 ± 0.15 |
+
+## Stand-in label quality (all 2,761 queries)
+
+| Task | Stand-in = gold SLM correctness | Agree but SLM wrong | Disagree but SLM right |
+| --- | --- | --- | --- |
+| math | 0.958 | 0.024 | 0.019 |
+| factual | 0.861 | 0.070 | 0.069 |
+| all | 0.907 | 0.048 | 0.045 |
+

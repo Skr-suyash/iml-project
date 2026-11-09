@@ -1,0 +1,16 @@
+{
+ "id": "skr1234/vcascade-hidden",
+ "title": "vcascade-hidden",
+ "code_file": "generate.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": true,
+ "dataset_sources": [
+  "skr1234/vcascade-inputs"
+ ],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": []
+}

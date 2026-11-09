@@ -1,0 +1,18 @@
+# Task-mix shift
+
+Routers are trained on one task mix and tested on the opposite mix. Area lift (accuracy points), mean ± std over 5 seeds.
+
+## train 80% math → test 80% factual
+
+| Cost ratio | Ours: greedy VOI | Fixed V1 (answer confidence) | Fixed V2 (self-consistency, best k) | Per-category map (oracle task) | Pre-generation router (V0) | AutoMix (V4, Bayes/POMDP) | Compute everything |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 20 | 2.86 ± 0.06 | 2.38 ± 0.06 | 1.24 ± 0.12 | 1.38 ± 0.12 | 1.48 ± 0.25 | 0.57 ± 0.30 | 0.00 ± 0.00 |
+| 60 | 3.32 ± 0.08 | 2.60 ± 0.06 | 2.11 ± 0.13 | 2.35 ± 0.12 | 1.48 ± 0.25 | 1.11 ± 0.28 | 1.54 ± 0.10 |
+
+## train 80% factual → test 80% math
+
+| Cost ratio | Ours: greedy VOI | Fixed V1 (answer confidence) | Fixed V2 (self-consistency, best k) | Per-category map (oracle task) | Pre-generation router (V0) | AutoMix (V4, Bayes/POMDP) | Compute everything |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 20 | 4.30 ± 0.31 | 4.08 ± 0.13 | 2.50 ± 0.08 | 2.40 ± 0.16 | 1.50 ± 0.32 | 1.39 ± 0.35 | 0.00 ± 0.00 |
+| 60 | 5.30 ± 0.24 | 4.38 ± 0.13 | 3.95 ± 0.08 | 3.92 ± 0.22 | 1.50 ± 0.32 | 2.01 ± 0.38 | 3.17 ± 0.15 |
+

@@ -1,0 +1,97 @@
+# Results
+
+## Cost ratio LLM/SLM = 3
+
+| Method | IBC lift (%) | Area lift (acc. points) | Max accuracy |
+| --- | --- | --- | --- |
+| Pre-generation router (V0) | 58.4 ± 1.2 | 9.11 ± 0.13 | 0.712 |
+| Ours: greedy VOI | 55.7 ± 1.3 | 8.79 ± 0.14 | 0.712 |
+| Fixed V1 (answer confidence) | 0.1 ± 0.1 | 0.01 ± 0.01 | 0.711 |
+| Fixed V2 (self-consistency, best k) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Fixed V3 (retrieval verify) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Fixed V4 (context-free verify) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Per-category map (oracle task) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| AutoMix (V4, Bayes/POMDP) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Compute everything | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.711 |
+
+Always-SLM: cost 1.00, acc 0.259. Always-LLM: cost 3.00, acc 0.707 (split 0).
+
+## Cost ratio LLM/SLM = 5
+
+| Method | IBC lift (%) | Area lift (acc. points) | Max accuracy |
+| --- | --- | --- | --- |
+| Pre-generation router (V0) | 58.4 ± 1.2 | 9.11 ± 0.13 | 0.712 |
+| Ours: greedy VOI | 56.0 ± 1.4 | 8.82 ± 0.17 | 0.711 |
+| Fixed V1 (answer confidence) | 9.6 ± 0.6 | 1.52 ± 0.08 | 0.711 |
+| Fixed V2 (self-consistency, best k) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Fixed V3 (retrieval verify) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Fixed V4 (context-free verify) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Per-category map (oracle task) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| AutoMix (V4, Bayes/POMDP) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Compute everything | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.711 |
+
+Always-SLM: cost 1.00, acc 0.259. Always-LLM: cost 5.00, acc 0.707 (split 0).
+
+## Cost ratio LLM/SLM = 10
+
+| Method | IBC lift (%) | Area lift (acc. points) | Max accuracy |
+| --- | --- | --- | --- |
+| Pre-generation router (V0) | 58.4 ± 1.2 | 9.11 ± 0.13 | 0.712 |
+| Ours: greedy VOI | 55.5 ± 0.9 | 8.88 ± 0.07 | 0.711 |
+| Per-category map (oracle task) | 22.9 ± 0.9 | 4.18 ± 0.13 | 0.710 |
+| Fixed V1 (answer confidence) | 20.4 ± 0.6 | 3.42 ± 0.10 | 0.711 |
+| Fixed V2 (self-consistency, best k) | 2.0 ± 0.4 | 0.39 ± 0.08 | 0.710 |
+| Fixed V3 (retrieval verify) | 0.0 ± 0.0 | -0.00 ± 0.00 | 0.710 |
+| Fixed V4 (context-free verify) | 0.0 ± 0.0 | -0.00 ± 0.00 | 0.710 |
+| AutoMix (V4, Bayes/POMDP) | 0.0 ± 0.0 | -0.00 ± 0.00 | 0.710 |
+| Compute everything | 0.0 ± 0.0 | -0.00 ± 0.00 | 0.711 |
+
+Always-SLM: cost 1.00, acc 0.259. Always-LLM: cost 10.00, acc 0.707 (split 0).
+
+## Cost ratio LLM/SLM = 20
+
+| Method | IBC lift (%) | Area lift (acc. points) | Max accuracy |
+| --- | --- | --- | --- |
+| Pre-generation router (V0) | 58.4 ± 1.2 | 9.11 ± 0.13 | 0.712 |
+| Ours: greedy VOI | 55.8 ± 1.1 | 8.91 ± 0.06 | 0.711 |
+| Per-category map (oracle task) | 38.0 ± 0.8 | 6.50 ± 0.07 | 0.710 |
+| Fixed V1 (answer confidence) | 25.7 ± 0.7 | 4.37 ± 0.09 | 0.711 |
+| Fixed V2 (self-consistency, best k) | 13.5 ± 0.5 | 2.48 ± 0.06 | 0.710 |
+| Fixed V4 (context-free verify) | 0.1 ± 0.2 | 0.02 ± 0.03 | 0.710 |
+| AutoMix (V4, Bayes/POMDP) | 0.1 ± 0.2 | 0.02 ± 0.03 | 0.710 |
+| Fixed V3 (retrieval verify) | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.710 |
+| Compute everything | -0.0 ± 0.0 | 0.00 ± 0.00 | 0.711 |
+
+Always-SLM: cost 1.00, acc 0.259. Always-LLM: cost 20.00, acc 0.707 (split 0).
+
+## Cost ratio LLM/SLM = 60
+
+| Method | IBC lift (%) | Area lift (acc. points) | Max accuracy |
+| --- | --- | --- | --- |
+| Pre-generation router (V0) | 58.4 ± 1.2 | 9.11 ± 0.13 | 0.712 |
+| Ours: greedy VOI | 57.3 ± 1.0 | 9.03 ± 0.03 | 0.711 |
+| Per-category map (oracle task) | 51.1 ± 1.0 | 8.13 ± 0.08 | 0.710 |
+| Fixed V1 (answer confidence) | 29.1 ± 0.7 | 4.97 ± 0.09 | 0.711 |
+| Fixed V2 (self-consistency, best k) | 24.0 ± 0.6 | 4.34 ± 0.10 | 0.710 |
+| Compute everything | 20.8 ± 1.1 | 3.78 ± 0.16 | 0.711 |
+| Fixed V4 (context-free verify) | 6.4 ± 1.6 | 1.18 ± 0.27 | 0.710 |
+| AutoMix (V4, Bayes/POMDP) | 5.7 ± 1.6 | 1.07 ± 0.26 | 0.710 |
+| Fixed V3 (retrieval verify) | 5.6 ± 0.9 | 0.99 ± 0.17 | 0.710 |
+
+Always-SLM: cost 1.00, acc 0.259. Always-LLM: cost 60.00, acc 0.707 (split 0).
+
+## Cost ratio LLM/SLM = 200
+
+| Method | IBC lift (%) | Area lift (acc. points) | Max accuracy |
+| --- | --- | --- | --- |
+| Pre-generation router (V0) | 58.4 ± 1.2 | 9.11 ± 0.13 | 0.712 |
+| Ours: greedy VOI | 57.7 ± 0.8 | 9.11 ± 0.05 | 0.711 |
+| Per-category map (oracle task) | 56.7 ± 1.2 | 8.79 ± 0.10 | 0.710 |
+| Compute everything | 45.0 ± 0.9 | 7.41 ± 0.10 | 0.711 |
+| Fixed V2 (self-consistency, best k) | 31.0 ± 0.4 | 5.41 ± 0.08 | 0.710 |
+| Fixed V1 (answer confidence) | 30.3 ± 0.7 | 5.18 ± 0.09 | 0.711 |
+| Fixed V4 (context-free verify) | 10.1 ± 2.1 | 1.79 ± 0.31 | 0.710 |
+| Fixed V3 (retrieval verify) | 9.5 ± 0.9 | 1.73 ± 0.17 | 0.710 |
+| AutoMix (V4, Bayes/POMDP) | 9.0 ± 2.1 | 1.66 ± 0.30 | 0.710 |
+
+Always-SLM: cost 1.00, acc 0.259. Always-LLM: cost 200.00, acc 0.707 (split 0).

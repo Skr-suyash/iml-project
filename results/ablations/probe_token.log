@@ -1,0 +1,59 @@
+Probe, last token + V1, layer 1/4 {'math': 0.7667202947322325, 'factual': 0.6864874195154065}
+Probe, last token + V1, layer 2/4 {'math': 0.8158256738810694, 'factual': 0.8155477769392574}
+Probe, last token + V1, layer 3/4 {'math': 0.8324043619608832, 'factual': 0.8167640777790267}
+Probe, last token + V1, layer 4/4 {'math': 0.8019791612126289, 'factual': 0.8090608391271535}
+Probe, mean tokens + V1, layer 1/4 {'math': 0.8246362255996269, 'factual': 0.7459035148284334}
+Probe, mean tokens + V1, layer 2/4 {'math': 0.8527862001342288, 'factual': 0.8439963711684516}
+Probe, mean tokens + V1, layer 3/4 {'math': 0.8672110391310349, 'factual': 0.8229098090849243}
+Probe, mean tokens + V1, layer 4/4 {'math': 0.8545473585004452, 'factual': 0.7790888582026044}
+Probe on prompt state (query only), layer 1/4 {'math': 0.6124832808952396, 'factual': 0.6988952937587308}
+Probe on prompt state (query only), layer 2/4 {'math': 0.6494961659106379, 'factual': 0.7384290852454278}
+Probe on prompt state (query only), layer 3/4 {'math': 0.712243382566436, 'factual': 0.759252717609467}
+Probe on prompt state (query only), layer 4/4 {'math': 0.6750401020519875, 'factual': 0.7326245604457361}
+probe: split 0 101s  {'probe': {'pool': 'mean', 'layer': 1, 'C': 0.01, 'cv_auroc': 0.8235960996240601}, 'probe_label_free': {'pool': 'mean', 'layer': 1, 'C': 0.001, 'cv_auroc': 0.8149262291723973}, 'prior_layer': 2, 'test_auroc': {'math': 0.8343646894579463, 'factual': 0.8366633038885198}, 'test_auroc_label_free': {'math': 0.8441855185040263, 'factual': 0.8361998966560862}}
+probe: split 1 121s  {'probe': {'pool': 'mean', 'layer': 1, 'C': 0.01, 'cv_auroc': 0.8409564319347441}, 'probe_label_free': {'pool': 'mean', 'layer': 2, 'C': 0.001, 'cv_auroc': 0.8213468587304182}, 'prior_layer': 2, 'test_auroc': {'math': 0.8300797532708479, 'factual': 0.8167262418340935}, 'test_auroc_label_free': {'math': 0.857836782883165, 'factual': 0.8278935042524345}}
+probe: split 2 106s  {'probe': {'pool': 'mean', 'layer': 2, 'C': 0.001, 'cv_auroc': 0.8053190309722376}, 'probe_label_free': {'pool': 'mean', 'layer': 2, 'C': 0.001, 'cv_auroc': 0.8114045597199414}, 'prior_layer': 2, 'test_auroc': {'math': 0.8675063588338878, 'factual': 0.8267937860021866}, 'test_auroc_label_free': {'math': 0.8638867149285853, 'factual': 0.826846820384785}}
+probe: split 3 118s  {'probe': {'pool': 'mean', 'layer': 2, 'C': 0.01, 'cv_auroc': 0.855012132019762}, 'probe_label_free': {'pool': 'mean', 'layer': 2, 'C': 0.001, 'cv_auroc': 0.8452361496976629}, 'prior_layer': 2, 'test_auroc': {'math': 0.866854743410697, 'factual': 0.7988968257322795}, 'test_auroc_label_free': {'math': 0.8606986552824187, 'factual': 0.8083308677458896}}
+probe: split 4 134s  {'probe': {'pool': 'mean', 'layer': 1, 'C': 0.01, 'cv_auroc': 0.8537990196078432}, 'probe_label_free': {'pool': 'mean', 'layer': 1, 'C': 0.01, 'cv_auroc': 0.8353466386554622}, 'prior_layer': 2, 'test_auroc': {'math': 0.8220359349156758, 'factual': 0.8311549057003603}, 'test_auroc_label_free': {'math': 0.817474566128067, 'factual': 0.8193897012078829}}
+# Hidden-state probe as the free signal (token costs)
+
+The probe (logistic regression on one layer of the SLM's hidden states plus V1) replaces V1. Pooling, layer and regularisation are chosen by 5-fold CV on each training split. Mean ± std over 5 splits.
+
+| Variant | IBC lift, ratio 5 | IBC lift, ratio 20 | IBC lift, ratio 60 | Area lift, ratio 5 | Area lift, ratio 20 | Area lift, ratio 60 |
+| --- | --- | --- | --- | --- | --- | --- |
+| Ours (V1 log-prob), as in the main results | 34.7 ± 4.8 | 50.7 ± 4.4 | 59.5 ± 5.1 | 2.01 ± 0.37 | 3.26 ± 0.36 | 3.90 ± 0.34 |
+| Ours + probe | 35.7 ± 4.3 | 54.2 ± 3.2 | 61.9 ± 4.0 | 2.22 ± 0.32 | 3.65 ± 0.19 | 4.17 ± 0.20 |
+| Ours + probe, free signals only (no paid verifier) | 36.2 ± 4.0 | 50.2 ± 4.6 | 53.4 ± 4.8 | 2.28 ± 0.30 | 3.24 ± 0.32 | 3.46 ± 0.33 |
+| Ours + probe + SLM-state prior | 40.9 ± 4.1 | 57.8 ± 4.9 | 65.3 ± 5.4 | 2.53 ± 0.26 | 3.77 ± 0.26 | 4.30 ± 0.26 |
+| Ours + probe, no gold labels | 28.0 ± 2.0 | 43.0 ± 2.9 | 47.6 ± 2.9 | 2.18 ± 0.19 | 3.32 ± 0.09 | 3.77 ± 0.16 |
+| Ours + probe, 50 gold labels + calibrated agreement | 32.0 ± 5.4 | 49.0 ± 5.8 | 54.1 ± 6.5 | 2.05 ± 0.27 | 3.34 ± 0.30 | 3.85 ± 0.30 |
+| Fixed V1 (log-prob threshold) | 32.9 ± 1.2 | 48.3 ± 1.1 | 51.6 ± 1.2 | 2.42 ± 0.09 | 3.57 ± 0.10 | 3.80 ± 0.10 |
+| Fixed probe threshold | 31.9 ± 3.5 | 47.6 ± 3.8 | 50.8 ± 3.8 | 2.44 ± 0.25 | 3.64 ± 0.18 | 3.88 ± 0.17 |
+| Pre-generation router (V0 sentence embedding) | 14.0 ± 4.5 | 13.5 ± 4.5 | 13.4 ± 4.5 | 0.99 ± 0.33 | 0.95 ± 0.33 | 0.94 ± 0.33 |
+| Pre-generation router (SLM prompt state) | 24.6 ± 6.4 | 25.3 ± 6.6 | 25.4 ± 6.7 | 1.48 ± 0.38 | 1.49 ± 0.39 | 1.49 ± 0.40 |
+| Ours, per-query costs | 38.5 ± 3.6 | 55.7 ± 3.4 | 62.9 ± 3.7 | 2.39 ± 0.12 | 3.54 ± 0.17 | 4.07 ± 0.26 |
+| Ours + probe, per-query costs | 38.6 ± 3.4 | 57.1 ± 3.3 | 63.6 ± 4.2 | 2.57 ± 0.19 | 3.91 ± 0.15 | 4.39 ± 0.21 |
+
+## Signal AUROC for SLM correctness (5-fold CV over all queries, C = 0.01)
+
+| Signal | Math | Factual |
+| --- | --- | --- |
+| V1 answer confidence | 0.778 | 0.796 |
+| V2 self-consistency, k=8 | 0.878 | 0.810 |
+| Probe, last token + V1, layer 1/4 | 0.767 | 0.686 |
+| Probe, last token + V1, layer 2/4 | 0.816 | 0.816 |
+| Probe, last token + V1, layer 3/4 | 0.832 | 0.817 |
+| Probe, last token + V1, layer 4/4 | 0.802 | 0.809 |
+| Probe, mean tokens + V1, layer 1/4 | 0.825 | 0.746 |
+| Probe, mean tokens + V1, layer 2/4 | 0.853 | 0.844 |
+| Probe, mean tokens + V1, layer 3/4 | 0.867 | 0.823 |
+| Probe, mean tokens + V1, layer 4/4 | 0.855 | 0.779 |
+| Probe on prompt state (query only), layer 1/4 | 0.612 | 0.699 |
+| Probe on prompt state (query only), layer 2/4 | 0.649 | 0.738 |
+| Probe on prompt state (query only), layer 3/4 | 0.712 | 0.759 |
+| Probe on prompt state (query only), layer 4/4 | 0.675 | 0.733 |
+
+Probe chosen on each training split, AUROC on its test split (mean over splits): math 0.844, factual 0.822. Trained on LLM agreement instead of gold labels: math 0.849, factual 0.824.
+
+Chosen configurations: split 0: mean, layer 2/4, C=0.01; split 1: mean, layer 2/4, C=0.01; split 2: mean, layer 3/4, C=0.001; split 3: mean, layer 3/4, C=0.01; split 4: mean, layer 2/4, C=0.01
+

@@ -1,0 +1,58 @@
+[{"stream_name":"stderr","time":6.589875831,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":6.5899244580000005,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":7.570744948,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.570773988,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.570779463,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.570783884,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.206830325,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.206861434,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.20686672,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.206870582,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":9.593500382,"data":"GPU: ['Tesla T4, 7.5', 'Tesla T4, 7.5']\n"}
+,{"stream_name":"stdout","time":10.058171335,"data":"using input /kaggle/input/datasets/skr1234/vcascade-inputs/embeddings.npy\n"}
+,{"stream_name":"stdout","time":10.058213779,"data":"using input /kaggle/input/datasets/skr1234/vcascade-inputs/embeddings_qids.json\n"}
+,{"stream_name":"stdout","time":10.337325935,"data":"using input /kaggle/input/datasets/skr1234/vcascade-inputs/llm.jsonl\n"}
+,{"stream_name":"stdout","time":10.337357576,"data":"using input /kaggle/input/datasets/skr1234/vcascade-inputs/queries.jsonl\n"}
+,{"stream_name":"stdout","time":10.671693004,"data":"using input /kaggle/input/datasets/skr1234/vcascade-inputs/retrieval.jsonl\n"}
+,{"stream_name":"stdout","time":10.705176366,"data":"using input /kaggle/input/datasets/skr1234/vcascade-inputs/slm.jsonl\n"}
+,{"stream_name":"stdout","time":10.705202006,"data":"/kaggle/working/cache ['hidden']\n"}
+,{"stream_name":"stdout","time":10.754764983,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":10.754794558,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":10.754799675,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":10.905676729,"data":"name, memory.total [MiB]\n"}
+,{"stream_name":"stdout","time":10.905704839,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":10.905709585,"data":"Tesla T4, 15360 MiB\n"}
+,{"stream_name":"stdout","time":55.329194273,"data":"torch 2.11.0+cu128 transformers 5.16.1 cuda True\n"}
+,{"stream_name":"stdout","time":55.329241338,"data":" \n"}
+,{"stream_name":"stdout","time":55.362548571,"data":"Writing src/vcascade/__init__.py\n"}
+,{"stream_name":"stdout","time":55.376782743,"data":"Writing src/vcascade/data.py\n"}
+,{"stream_name":"stdout","time":55.390133306,"data":"Writing src/vcascade/prompts.py\n"}
+,{"stream_name":"stdout","time":55.405419038,"data":"Writing src/vcascade/grading.py\n"}
+,{"stream_name":"stdout","time":55.421059743,"data":"Writing src/vcascade/backends.py\n"}
+,{"stream_name":"stdout","time":55.437131713,"data":"Writing src/vcascade/retrieval.py\n"}
+,{"stream_name":"stdout","time":55.456210301,"data":"Writing src/vcascade/generate.py\n"}
+,{"stream_name":"stdout","time":55.621629978,"data":"$ /usr/bin/python3 -m vcascade.generate --out /kaggle/working/cache hidden --model Qwen/Qwen2.5-1.5B-Instruct --dtype half\n"}
+,{"stream_name":"stdout","time":63.755773966,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":64.924668765,"data":"[transformers] `torch_dtype` is deprecated! Use `dtype` instead!\n"}
+,{"stream_name":"stdout","time":90.521821243,"data":"\n"}
+,{"stream_name":"stdout","time":92.060975457,"data":"Loading weights:   0%|          | 0/338 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":92.062084241,"data":"Loading weights: 100%|██████████| 338/338 [00:01\u003c00:00, 218.36it/s]\n"}
+,{"stream_name":"stdout","time":95.195097453,"data":"\n"}
+,{"stream_name":"stdout","time":125.36078218,"data":"  0%|          | 0/346 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stdout","time":140.298168557,"data":" 47%|████▋     | 163/346 [00:30\u003c00:33,  5.40it/s]\n"}
+,{"stream_name":"stdout","time":155.567756702,"data":" 47%|████▋     | 163/346 [00:45\u003c00:33,  5.40it/s]\n"}
+,{"stream_name":"stdout","time":170.298628297,"data":" 77%|███████▋  | 265/346 [01:00\u003c00:19,  4.21it/s]\n"}
+,{"stream_name":"stdout","time":185.791738172,"data":" 77%|███████▋  | 265/346 [01:15\u003c00:19,  4.21it/s]\n"}
+,{"stream_name":"stdout","time":199.368337782,"data":" 94%|█████████▍| 325/346 [01:30\u003c00:06,  3.19it/s]\n"}
+,{"stream_name":"stdout","time":199.369509156,"data":"100%|██████████| 346/346 [01:44\u003c00:00,  3.32it/s]\n"}
+,{"stream_name":"stdout","time":203.541134377,"data":"hidden states for 2761 queries, layers [7, 14, 21, 28], dim 1536\n"}
+,{"stream_name":"stdout","time":209.228604401,"data":"wrote /kaggle/working/cache.zip\n"}
+,{"stream_name":"stderr","time":211.845881051,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":211.845918221,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":212.010060839,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":212.010088689,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":212.789635652,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":212.88334813,"data":"[NbConvertApp] Writing 70847 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":215.446304498,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":216.107598917,"data":"[NbConvertApp] Writing 491350 bytes to __results__.html\n"}
+]

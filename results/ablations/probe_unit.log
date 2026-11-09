@@ -1,0 +1,16 @@
+Probe, last token + V1, layer 1/4 {'math': 0.7667202947322325, 'factual': 0.6864874195154065}
+Probe, last token + V1, layer 2/4 {'math': 0.8158256738810694, 'factual': 0.8155477769392574}
+Probe, last token + V1, layer 3/4 {'math': 0.8324043619608832, 'factual': 0.8167640777790267}
+Probe, last token + V1, layer 4/4 {'math': 0.8019791612126289, 'factual': 0.8090608391271535}
+Probe, mean tokens + V1, layer 1/4 {'math': 0.8246362255996269, 'factual': 0.7459035148284334}
+Probe, mean tokens + V1, layer 2/4 {'math': 0.8527862001342288, 'factual': 0.8439963711684516}
+Probe, mean tokens + V1, layer 3/4 {'math': 0.8672110391310349, 'factual': 0.8229098090849243}
+Probe, mean tokens + V1, layer 4/4 {'math': 0.8545473585004452, 'factual': 0.7790888582026044}
+Probe on prompt state (query only), layer 1/4 {'math': 0.6124832808952396, 'factual': 0.6988952937587308}
+Probe on prompt state (query only), layer 2/4 {'math': 0.6494961659106379, 'factual': 0.7384290852454278}
+Probe on prompt state (query only), layer 3/4 {'math': 0.712243382566436, 'factual': 0.759252717609467}
+Probe on prompt state (query only), layer 4/4 {'math': 0.6750401020519875, 'factual': 0.7326245604457361}
+probe: split 0 79s  {'probe': {'pool': 'mean', 'layer': 1, 'C': 0.01, 'cv_auroc': 0.8235960996240601}, 'probe_label_free': {'pool': 'mean', 'layer': 1, 'C': 0.001, 'cv_auroc': 0.8149262291723973}, 'prior_layer': 2, 'test_auroc': {'math': 0.8343646894579463, 'factual': 0.8366633038885198}, 'test_auroc_label_free': {'math': 0.8441855185040263, 'factual': 0.8361998966560862}}
+probe: split 1 92s  {'probe': {'pool': 'mean', 'layer': 1, 'C': 0.01, 'cv_auroc': 0.8409564319347441}, 'probe_label_free': {'pool': 'mean', 'layer': 2, 'C': 0.001, 'cv_auroc': 0.8213468587304182}, 'prior_layer': 2, 'test_auroc': {'math': 0.8300797532708479, 'factual': 0.8167262418340935}, 'test_auroc_label_free': {'math': 0.857836782883165, 'factual': 0.8278935042524345}}
+probe: split 2 79s  {'probe': {'pool': 'mean', 'layer': 2, 'C': 0.001, 'cv_auroc': 0.8053190309722376}, 'probe_label_free': {'pool': 'mean', 'layer': 2, 'C': 0.001, 'cv_auroc': 0.8114045597199414}, 'prior_layer': 2, 'test_auroc': {'math': 0.8675063588338878, 'factual': 0.8267937860021866}, 'test_auroc_label_free': {'math': 0.8638867149285853, 'factual': 0.826846820384785}}
+probe: split 3 89s  {'probe': {'pool': 'mean', 'layer': 2, 'C': 0.01, 'cv_auroc': 0.855012132019762}, 'probe_label_free': {'pool': 'mean', 'layer': 2, 'C': 0.001, 'cv_auroc': 0.8452361496976629}, 'prior_layer': 2, 'test_auroc': {'math': 0.866854743410697, 'factual': 0.7988968257322795}, 'test_auroc_label_free': {'math': 0.8606986552824187, 'factual': 0.8083308677458896}}
